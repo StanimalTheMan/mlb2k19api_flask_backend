@@ -48,6 +48,8 @@ def create_app(config_name):
 
             data_entry = {
                 'playerID': row['playerID'],
+                'nameFirst': row['nameFirst'],
+                'nameLast': row['nameLast'],
                 'yearID': row['yearID'],
                 'teamID': row['teamID'],
                 'lgID': row['lgID'],
@@ -65,8 +67,8 @@ def create_app(config_name):
             if row['AB'] + row['BB'] + row['HBP'] + row['SF'] == 0:
                 data_entry['OBP'] = str(0.000)
             else:
-                data_entry['OBP']: str(round((row['H'] + row['BB'] + row['HBP']) / (row['AB'] + row['BB'] + row['HBP'] + row['SF']), 3))
-            
+                data_entry['OBP'] = str(round((row['H'] + row['BB'] + row['HBP']) / (row['AB'] + row['BB'] + row['HBP'] + row['SF']), 3))
+                print(data_entry)
             data.append(data_entry)
         
         response = jsonify(data)
@@ -94,6 +96,8 @@ def create_app(config_name):
 
             data_entry = {
                 'playerID': row['playerID'],
+                'nameFirst': row['nameFirst'],
+                'nameLast': row['nameLast'],
                 'yearID': row['yearID'],
                 'teamID': row['teamID'],
                 'lgID': row['lgID'],
