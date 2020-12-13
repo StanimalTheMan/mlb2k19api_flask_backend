@@ -118,22 +118,5 @@ def create_app(config_name):
         con.close()
 
         return response
-            # PLAYERID	YEARID	TEAMID	LGID	W	L	SO	ERA	WHIP
-    '''
-    .then((pitcherData) => {
-      // WHIP = round((H + BB)) * 3/IPouts, 2)
-      pitcherData.forEach((pitcherDataEntry) => {
-        pitcherDataEntry.ERA = String(pitcherDataEntry.ERA.toFixed(2));
-        pitcherDataEntry.WHIP = String(
-          (
-            ((pitcherDataEntry.H + pitcherDataEntry.BB) * 3) /
-            pitcherDataEntry.IPouts
-          ).toFixed(2)
-        );
-      });
 
-      res.send(pitcherData);
-    });
-});
-    '''
     return app
