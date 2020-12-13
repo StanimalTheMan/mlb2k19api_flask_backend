@@ -68,7 +68,6 @@ def create_app(config_name):
                 data_entry['OBP'] = str(0.000)
             else:
                 data_entry['OBP'] = str(round((row['H'] + row['BB'] + row['HBP']) / (row['AB'] + row['BB'] + row['HBP'] + row['SF']), 3))
-                print(data_entry)
             data.append(data_entry)
         
         response = jsonify(data)
